@@ -2,16 +2,31 @@
   "name": "mh-wilds-event-card-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
+    "example": "ts-node -r tsconfig-paths/register src/index.ts",
     "start": "ts-node -r tsconfig-paths/register src/index.ts",
-    "dev": "ts-node --esm src/index.ts",
-    "test": "jest --config jest.config.js"
+    "test": "jest --config jest.config.js",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"src/**/*.ts\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "monster hunter",
+    "scraper",
+    "mh wilds"
+  ],
+  "author": "imtheme2206",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imtheme2206/mh-wilds-event-card-generator.git"
+  },
   "devDependencies": {
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",

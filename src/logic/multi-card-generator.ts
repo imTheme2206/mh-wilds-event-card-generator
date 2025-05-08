@@ -1,10 +1,13 @@
 import { createCanvas, loadImage } from 'canvas';
 import fs from 'fs';
 import { generateQuestCard } from 'logic/generate-card';
+import { EventQuestItem } from 'types';
 
-export async function generateQuestSheet(
-  quests: Parameters<typeof generateQuestCard>[]
-) {
+export async function generateQuestSheet(quests: EventQuestItem[]) {
+  if (quests.length === 0) {
+    console.log('No quests to generate.');
+    return;
+  }
   const cardsPerRow = 2;
   const cardWidth = 1400;
   const cardHeight = 700;
@@ -31,6 +34,8 @@ export async function generateQuestSheet(
   }
 
   const buffer = canvas.toBuffer('image/png');
-  fs.writeFileSync('./output-multicard.png', buffer);
-  console.log('Multi-card image generated: output-multicard.png');
+  // fs.writeFileSync('./output-multicard.png', buffer);
+  // console.log('Multi-card image generated: output-multicard.png');
+
+  return buffer;
 }
