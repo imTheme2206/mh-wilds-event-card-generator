@@ -1,9 +1,9 @@
-import { createCanvas, loadImage } from 'canvas';
-import fs from 'fs';
+import { createCanvas } from 'canvas';
 import { drawOutlinedImage } from './draw-outline';
 import { EventQuestItem } from '../types';
 import { LocalesBuilder } from './locales';
 import { questTargetBuilder } from './quest';
+import { loadAssetImage } from '../utils/image-loader';
 
 const iconWidth = 256;
 const iconHeight = 256;
@@ -15,7 +15,7 @@ export const generateQuestCard = async (quest: EventQuestItem) => {
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
 
-  const bg = await loadImage(`assets/card/card-bg.png`);
+  const bg = await loadAssetImage(`card/card-bg.png`);
 
   ctx.drawImage(bg, 0, 0, width, height);
 

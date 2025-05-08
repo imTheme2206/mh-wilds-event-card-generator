@@ -1,1 +1,1 @@
-export { generateEventCards } from './lib/generator';
+export * from './lib/generator';
