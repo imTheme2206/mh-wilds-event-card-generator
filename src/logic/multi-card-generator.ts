@@ -1,5 +1,4 @@
-import { createCanvas, loadImage } from 'canvas';
-import fs from 'fs';
+import { createCanvas } from 'canvas';
 import { generateQuestCard } from './generate-card';
 import { EventQuestItem } from '../types';
 
@@ -34,8 +33,6 @@ export async function generateQuestSheet(quests: EventQuestItem[]) {
   }
 
   const buffer = canvas.toBuffer('image/png');
-  // fs.writeFileSync('./output-multicard.png', buffer);
-  // console.log('Multi-card image generated: output-multicard.png');
 
   return buffer;
 }

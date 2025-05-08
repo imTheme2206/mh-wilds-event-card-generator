@@ -1,17 +1,18 @@
 {
   "name": "mh-wilds-event-card-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "files": [
     "dist",
+    "src/assets",
     "README.md"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp -r src/assets dist/assets",
     "prepare": "npm run build",
-    "example": "ts-node -r tsconfig-paths/register src/test/index.ts",
+    "example": "ts-node -r tsconfig-paths/register example/index.ts",
     "start": "ts-node -r tsconfig-paths/register src/index.ts",
     "test": "jest --config jest.config.js",
     "lint": "eslint src/**/*.ts",

@@ -1,5 +1,6 @@
-import { createCanvas, loadImage } from 'canvas';
+import { createCanvas } from 'canvas';
 import { EventQuestItem } from '../types';
+import { loadAssetImage } from '../utils/image-loader';
 
 export const LocalesBuilder = async (quest: EventQuestItem) => {
   const canvasWidth = 200;
@@ -9,9 +10,9 @@ export const LocalesBuilder = async (quest: EventQuestItem) => {
   const ctx = canvas.getContext('2d');
 
   const formattedLocalesName = quest.locales.toLowerCase().split(' ').join('_');
-  const localesImgPath = `assets/icons/locales/${formattedLocalesName}.png`;
-
-  const icon = await loadImage(localesImgPath);
+  const icon = await loadAssetImage(
+    `icons/locales/${formattedLocalesName}.png`
+  );
 
   const outlineWidth = 0;
   const iconWidth = 200;

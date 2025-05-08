@@ -1,5 +1,6 @@
 import { createCanvas, loadImage } from 'canvas';
 import { EventQuestItem } from '../types';
+import { loadAssetImage } from '../utils/image-loader';
 
 const iconWidth = 256;
 const iconHeight = 256;
@@ -9,8 +10,8 @@ export const drawOutlinedImage = async ({
   variant,
 }: EventQuestItem) => {
   const formattedMonsterName = targetMonster.split(' ').join('_');
-  const icon = await loadImage(
-    `assets/icons/large/${formattedMonsterName}_Icon.png`
+  const icon = await loadAssetImage(
+    `icons/large/${formattedMonsterName}_Icon.png`
   );
 
   const outlineWidth = 0.25;

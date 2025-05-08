@@ -1,5 +1,6 @@
 import { createCanvas, loadImage } from 'canvas';
 import { EventQuestItem } from '../types';
+import { loadAssetImage } from '../utils/image-loader';
 
 export const questTargetBuilder = async (quest: EventQuestItem) => {
   const canvasWidth = 1400;
@@ -8,9 +9,8 @@ export const questTargetBuilder = async (quest: EventQuestItem) => {
   const canvas = createCanvas(canvasWidth, canvasHeight);
   const ctx = canvas.getContext('2d');
 
-  const questTypeImagePath = `assets/icons/quest/${quest.questType}.png`;
-
-  const questTypeImage = await loadImage(questTypeImagePath);
+  const questTypeImagePath = `icons/quest/${quest.questType}.png`;
+  const questTypeImage = await loadAssetImage(questTypeImagePath);
 
   ctx.drawImage(questTypeImage, 0, 0, 100, 100);
 
