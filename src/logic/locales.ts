@@ -1,5 +1,5 @@
 import { createCanvas, loadImage } from 'canvas';
-import { EventQuestItem } from 'types';
+import { EventQuestItem } from '../types';
 
 export const LocalesBuilder = async (quest: EventQuestItem) => {
   const canvasWidth = 200;

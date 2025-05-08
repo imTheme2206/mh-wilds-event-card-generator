@@ -1,7 +1,7 @@
 import { createCanvas, loadImage } from 'canvas';
 import fs from 'fs';
-import { generateQuestCard } from 'logic/generate-card';
-import { EventQuestItem } from 'types';
+import { generateQuestCard } from './generate-card';
+import { EventQuestItem } from '../types';
 
 export async function generateQuestSheet(quests: EventQuestItem[]) {
   if (quests.length === 0) {

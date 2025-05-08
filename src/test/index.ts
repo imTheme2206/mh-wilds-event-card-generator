@@ -1,5 +1,6 @@
-import { generateQuestSheet } from 'logic/multi-card-generator';
+import { generateQuestSheet } from '../logic/multi-card-generator';
 import { MOCK_QUEST_DATA, MOCK_QUEST_DATA_2 } from './data';
+import fs from 'fs';
 
 // generateQuestCard({
 //   questName: MOCK_QUEST_DATA_2.questName,
@@ -13,7 +14,15 @@ import { MOCK_QUEST_DATA, MOCK_QUEST_DATA_2 } from './data';
 async function run() {
   const events = (await MOCK_QUEST_DATA).flatMap((quest) => quest);
 
-  await generateQuestSheet(events as any);
+  const buffer = await generateQuestSheet(events as any);
+
+  if (!buffer) {
+    console.error('Failed to generate image');
+    return;
+  }
+
+  fs.writeFileSync('./output-multicard.png', buffer);
+  console.log('Multi-card image generated: output-multicard.png');
 }
 
 run();

@@ -1,12 +1,5 @@
-import {
-  createCanvas,
-  CanvasRenderingContext2D,
-  Image,
-  loadImage,
-} from 'canvas';
-import { EventQuestItem } from 'types';
-
-//Draw outline for Tempered Monsters
+import { createCanvas, loadImage } from 'canvas';
+import { EventQuestItem } from '../types';
 
 const iconWidth = 256;
 const iconHeight = 256;
