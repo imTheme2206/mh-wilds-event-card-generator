@@ -37,7 +37,6 @@
   "dependencies": {
     "@types/jsdom": "^21.1.7",
     "@types/node": "^22.15.3",
-    "axios": "^1.9.0",
     "canvas": "^3.1.0",
     "jsdom": "^26.1.0"
   }

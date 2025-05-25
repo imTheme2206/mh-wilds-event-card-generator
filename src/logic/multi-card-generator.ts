@@ -8,8 +8,8 @@ export async function generateQuestSheet(quests: EventQuestItem[]) {
     return;
   }
   const cardsPerRow = 2;
-  const cardWidth = 1400;
-  const cardHeight = 700;
+  const cardWidth = 700;
+  const cardHeight = 350;
   const padding = 20;
   const totalRows = Math.ceil(quests.length / cardsPerRow);
 

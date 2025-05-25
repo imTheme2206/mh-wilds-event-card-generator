@@ -132,5 +132,4 @@ ISC
 
 - Node.js
 - canvas - for image generation
-- axios - for HTTP requests (if fetching from API)
 - TypeScript for type safety

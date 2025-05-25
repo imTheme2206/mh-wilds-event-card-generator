@@ -1,6 +1,7 @@
 import { createCanvas, loadImage } from 'canvas';
 import { EventQuestItem } from '../types';
 import { loadAssetImage } from '../utils/image-loader';
+import { fontSize, getFont } from 'constant';
 
 export const questTargetBuilder = async (quest: EventQuestItem) => {
   const canvasWidth = 1400;
@@ -15,8 +16,7 @@ export const questTargetBuilder = async (quest: EventQuestItem) => {
   ctx.drawImage(questTypeImage, 0, 0, 100, 100);
 
   ctx.fillStyle = '#111';
-  const fontSize = 72;
-  ctx.font = `${fontSize}px Arial`;
+  ctx.font = getFont();
 
   ctx.fillText(
     `${questTypeToText(quest.questType)}${
